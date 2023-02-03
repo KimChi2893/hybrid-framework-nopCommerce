@@ -1,0 +1,1 @@
+{"uuid":"957196a8-f502-4834-b190-315e5fca3924","name":"Run on FIREFOX browser","children":["38733197-967b-4056-925d-d0dd8d793a7b"],"befores":[{"name":"beforeTest","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1675354519338,"stop":1675354526697}],"afters":[],"links":[],"start":1675354519324,"stop":1675354560388}
