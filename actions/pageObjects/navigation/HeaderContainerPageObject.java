@@ -13,17 +13,7 @@ public class HeaderContainerPageObject extends BasePage{
 		this.driver = driver;
 	}
 	
-	public RegisterPageObject openRegisterPageObject() {
-		waitForElementClickable(driver, HeaderContainerPageUI.REGISTER_LINK);
-		clickElement(driver, HeaderContainerPageUI.REGISTER_LINK);
-		return PageGeneratorManager.getRegisterPage(driver);
-	}
 	
-	public LoginPageObject openLoginPageObject() {
-		waitForElementClickable(driver, HeaderContainerPageUI.LOGIN_LINK);
-		clickElement(driver, HeaderContainerPageUI.LOGIN_LINK);
-		return PageGeneratorManager.getLoginPage(driver);
-	}
 	
 //	public CustomerInfoPageObject openCustomerInfoPageObject() {
 //		waitForElementClickable(driver, HeaderContainerPageUI.MY_ACCOUNT_LINK);

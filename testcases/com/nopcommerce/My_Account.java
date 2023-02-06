@@ -26,6 +26,9 @@ public class My_Account extends BaseTest{
 		
 		loginPage.setCookies(driver, Common_Login.loginCookies);
 		customerInfoPage = PageGeneratorManager.getCustomerInfoPage(driver);
+		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
+		
+		
 		/*
 		driver = getBrowserDriver(browserName);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
@@ -56,7 +59,7 @@ public class My_Account extends BaseTest{
 	
 	//@Test
 	public void TC_02_Login_Invalid_Email() {
-		loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
+		loginPage = homePage.openLoginPageObject();
 		
 		loginPage.enterTextboxByID(driver, "Email", "");
 		loginPage.clickLoginButton();
@@ -66,7 +69,7 @@ public class My_Account extends BaseTest{
 	
 	//@Test
 	public void TC_03_Login_Not_Registered_Email() {
-		loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
+		loginPage = homePage.openLoginPageObject();
 		
 		loginPage.enterTextboxByID(driver, "Email", "");
 		loginPage.enterTextboxByID(driver, "Password", password);
@@ -78,7 +81,7 @@ public class My_Account extends BaseTest{
 
 	//@Test
 	public void TC_04_Login_Registered_Email_No_Password() {
-		loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
+		loginPage = homePage.openLoginPageObject();
 		
 		loginPage.enterTextboxByID(driver, "Email", registeredEmail);
 		loginPage.enterTextboxByID(driver, "Password", "");
@@ -89,7 +92,7 @@ public class My_Account extends BaseTest{
 
 	//@Test
 	public void TC_05_Login_Registered_Email_Incorrect_Password() {
-loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
+loginPage = homePage.openLoginPageObject();
 		
 		loginPage.enterTextboxByID(driver, "Email", registeredEmail);
 		
@@ -110,7 +113,7 @@ loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
 	
 	String firstName = "Automation", lastName = "FC", email = "automationfc.vn@gmail.com", company = "AutomationFC";
 	String dayOfBirth = "2";
-	String monthOfBirth = "10";
+	String monthOfBirth = "October";
 	String yearOfBirth = "1997";
 	String registeredEmail = "cindytest@gmail.com";
 	String password= "123456";

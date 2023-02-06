@@ -1,5 +1,5 @@
-package com.nopcommerce;
 
+package com.nopcommerce;
 import java.util.Set;
 
 import org.openqa.selenium.Cookie;
@@ -27,7 +27,8 @@ public class Common_Login extends BaseTest{
 		loginPage.enterTextboxByID(driver, "Password", password);
 		customerInfoPage = loginPage.clickLoginButton();
 		
-		Assert.assertTrue(customerInfoPage.isPageLoadedSuccess(driver));
+		
+		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 		loginCookies = customerInfoPage.getCookies(driver);
 		driver.quit();
 	}

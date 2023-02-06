@@ -100,6 +100,16 @@ public class BasePage {
 		new WebDriverWait(driver, longTimeout).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(castRestParameter(locator, dynamicLocator))));
 
 	}
+	
+	public boolean isElementDisplayedInDOM(WebDriver driver, String locator) {
+		return getWebElement(driver, locator).isDisplayed();
+	}
+	
+	public boolean isElementDisplayed(WebDriver driver, String locator, String... dynamicLocator) {
+		return getWebElement(driver, castRestParameter(locator, dynamicLocator)).isDisplayed();
+	}
+
+	
 	public void sendKeyToElement(WebDriver driver, String locator, String valueToInput) {
 		WebElement element = getWebElement(driver, locator);
 		element.clear();

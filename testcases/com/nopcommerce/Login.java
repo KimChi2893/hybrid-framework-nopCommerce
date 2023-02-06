@@ -21,7 +21,7 @@ public class Login extends BaseTest{
 
 	//@Test ()
 	public void TC_01_Login_Empty_Data() {
-		loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
+		loginPage = homePage.openLoginPageObject();
 		loginPage.clickLoginButton();
 		
 		Assert.assertEquals(loginPage.getInlineErrorMessageTextByID(driver, "Email-error"), "Please enter your email");
@@ -29,7 +29,7 @@ public class Login extends BaseTest{
 	
 	//@Test
 	public void TC_02_Login_Invalid_Email() {
-		loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
+		loginPage = homePage.openLoginPageObject();
 		
 		loginPage.enterTextboxByID(driver, "Email", invalidEmail);
 		loginPage.clickLoginButton();
@@ -39,7 +39,7 @@ public class Login extends BaseTest{
 	
 	//@Test
 	public void TC_03_Login_Not_Registered_Email() {
-		loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
+		loginPage = homePage.openLoginPageObject();
 		
 		loginPage.enterTextboxByID(driver, "Email", notRegisteredEmail);
 		loginPage.enterTextboxByID(driver, "Password", password);
@@ -51,7 +51,7 @@ public class Login extends BaseTest{
 
 	//@Test
 	public void TC_04_Login_Registered_Email_No_Password() {
-		loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
+		loginPage = homePage.openLoginPageObject();
 		
 		loginPage.enterTextboxByID(driver, "Email", registeredEmail);
 		loginPage.enterTextboxByID(driver, "Password", "");
@@ -62,7 +62,7 @@ public class Login extends BaseTest{
 
 	//@Test
 	public void TC_05_Login_Registered_Email_Incorrect_Password() {
-loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
+loginPage = homePage.openLoginPageObject();
 		
 		loginPage.enterTextboxByID(driver, "Email", registeredEmail);
 		loginPage.enterTextboxByID(driver, "Password", incorrectPassword);
@@ -71,9 +71,9 @@ loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
 		Assert.assertEquals(loginPage.getNotRegisteredAccountMessage(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
 	}
 
-	//@Test
+	@Test
 	public void TC_06_Login_Valid_Account() {
-		loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
+		loginPage = homePage.openLoginPageObject();
 		
 		loginPage.enterTextboxByID(driver, "Email", registeredEmail);
 		loginPage.enterTextboxByID(driver, "Password", password);
@@ -81,6 +81,7 @@ loginPage = homePage.getHeaderContainerPage(driver).openLoginPageObject();
 		
 		Assert.assertTrue(homePage.isPageLoadedSuccess(driver));
 		homePage = PageGeneratorManager.getUserHomePage(driver);
+		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 		Assert.assertEquals(driver.getTitle(), "nopCommerce demo store");
 	}
 	

@@ -16,7 +16,6 @@ public class LoginPageObject extends BasePage{
 	@Step("Click Login button")
 	public CustomerInfoPageObject clickLoginButton() {
 		clickToElementByJS(driver, castRestParameter(LoginPageUI.LOGIN_BUTTON));
-		//sleepInSecond(0.5);
 		return PageGeneratorManager.getCustomerInfoPage(driver);
 	}
 	

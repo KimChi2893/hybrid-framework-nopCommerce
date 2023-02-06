@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="nopCommerce">
+  <listeners>
+  	<listener class-name="commons.MethodListener"/>
+  	<!-- <listener class-name="reportConfig.ReportNGListener"/> -->
+  	<!-- <listener class-name="reportConfig.ExtentTestListener"/> -->
+  	<listener class-name="reportConfig.AllureTestListener"/>
+  </listeners>
+  
+  <parameter name="userUrl" value="" />
+  <test name="Run on FIREFOX browser">
+  	<parameter name="browser" value="firefox"/>
+  	<classes>
+  		<!-- <class name="com.nopcommerce.Register"/> -->
+  		<!-- <class name="com.nopcommerce.Login"/> -->
+  		<class name="com.nopcommerce.Common_Login"/>
+  		<class name="com.nopcommerce.My_Account"/>  		
+    </classes>
+  </test>
+  
+</suite>

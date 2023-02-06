@@ -21,7 +21,7 @@ public class Register extends BaseTest{
 
 	//@Test ()
 	public void TC_01_Register_Empty_Data() {
-		registerPage = homePage.getHeaderContainerPage(driver).openRegisterPageObject();
+		registerPage = homePage.openRegisterPageObject();
 		registerPage.clickRegisterButton();
 		
 		Assert.assertEquals(registerPage.getInlineErrorMessageTextByID(driver, "FirstName-error"), "First name is required.");
@@ -33,7 +33,7 @@ public class Register extends BaseTest{
 	
 	//@Test
 	public void TC_02_Register_Invalid_Email() {
-		registerPage = homePage.getHeaderContainerPage(driver).openRegisterPageObject();
+		registerPage = homePage.openRegisterPageObject();
 		
 		registerPage.clickRadioButtonByID(driver, "gender-female");
 		registerPage.enterTextboxByID(driver, "FirstName", firstName);
@@ -48,7 +48,7 @@ public class Register extends BaseTest{
 	
 	@Test
 	public void TC_03_Register_Valid_Data() {
-		registerPage = homePage.getHeaderContainerPage(driver).openRegisterPageObject();
+		registerPage = homePage.openRegisterPageObject();
 		
 		//registerPage.clickRadioButtonByID(driver, "gender-female");
 		registerPage.enterTextboxByID(driver, "FirstName", firstName);
@@ -63,7 +63,7 @@ public class Register extends BaseTest{
 	
 	//@Test
 	public void TC_04_Register_Already_Email() {
-		registerPage = homePage.getHeaderContainerPage(driver).openRegisterPageObject();
+		registerPage = homePage.openRegisterPageObject();
 		
 		registerPage.clickRadioButtonByID(driver, "gender-female");
 		registerPage.enterTextboxByID(driver, "FirstName", firstName);
@@ -78,7 +78,7 @@ public class Register extends BaseTest{
 	
 	//@Test
 	public void TC_05_Register_Less_6_Characters_Password() {
-		registerPage = homePage.getHeaderContainerPage(driver).openRegisterPageObject();
+		registerPage = homePage.openRegisterPageObject();
 		
 		registerPage.clickRadioButtonByID(driver, "gender-female");
 		registerPage.enterTextboxByID(driver, "FirstName", firstName);
@@ -93,7 +93,7 @@ public class Register extends BaseTest{
 	
 	//@Test
 	public void TC_06_Register_Incorrect_Confirm_Password() {
-		registerPage = homePage.getHeaderContainerPage(driver).openRegisterPageObject();
+		registerPage = homePage.openRegisterPageObject();
 		
 		registerPage.clickRadioButtonByID(driver, "gender-female");
 		registerPage.enterTextboxByID(driver, "FirstName", firstName);
